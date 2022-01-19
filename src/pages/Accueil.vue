@@ -7,15 +7,17 @@
             <img src="../assets/weatherCard/dayWeather.png" alt="dayTime" class="background">
             <font-awesome-icon :icon="['fas', 'cloud-sun']" class="icon cloud-sun"></font-awesome-icon>
             <p class="title">Météo</p>
-            <font-awesome-icon :icon="['fas', 'share-alt']" class="icon share-actuelle"></font-awesome-icon>
+            <a href="github.com/lbAntoine" class="share-btn">
+              <font-awesome-icon :icon="['fas', 'share-alt']" class="icon share-actuelle"></font-awesome-icon>
+            </a>
           </div>
         </div>
 
         <div class="meteo-card meteo-prevision">
           <div class="mask">
-            <img src="../assets/weatherCard/rainyWeather.jpg" alt="rainyTime" class="background">
+            <img src="../assets/weatherCard/rainyWeather.jpg" alt="rainyTime" class="icon background">
+            <p class="title">Demain</p>
           </div>
-          <p>Demain</p>
         </div>
       </div>
 
@@ -71,12 +73,37 @@
   border-radius: 20px;
 }
 .card-container .meteo-actuelle .mask .title,
-.card-container .meteo-actuelle .mask .icon {
+.card-container .meteo-actuelle .mask .share-btn,
+.card-container .meteo-actuelle .mask .cloud-sun {
   z-index: 1;
   position: absolute;
   /* color: aliceblue; */
 }
+.card-container .meteo-actuelle .mask .share-btn {
+  /* background-color: aliceblue; */
+  height: 2em;
+  width: 2em;
+  border-radius: 50%;
+  top: 1.5vh;
+  right: 2.5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s ease;
+}
 .card-container .meteo-actuelle .mask .title {
+  font-size: 1.5em;
+  font-weight: 500;
+  color: aliceblue;
+  top: 1vh;
+}
+.card-container .meteo-prevision .mask .title,
+.card-container .meteo-prevision .mask .icon {
+  z-index: 1;
+  position: absolute;
+  /* color: aliceblue; */
+}
+.card-container .meteo-prevision .mask .title {
   font-size: 1.5em;
   font-weight: 500;
   color: aliceblue;
@@ -104,7 +131,7 @@
   height: 30vh; */
   border-radius: 20px;
 }
-.card-container .meteo-prevision p,
+.card-container .meteo-prevision .title,
 .card-container .meteo-prevision .icon {
   z-index: 1;
   position: absolute;
@@ -117,14 +144,17 @@
   margin: 10px;
   border-radius: 20px;
 }
-.card-container .meteo-actuelle .mask .share-actuelle {
-  right: 3vw;
-  top: 2vh;
+.card-container .meteo-actuelle .mask .share-btn .share-actuelle {
+  /* right: 3vw;
+  top: 2vh; */
   color: aliceblue;
   transition: 0.3s ease;
   cursor: pointer;
 }
-.card-container .meteo-actuelle .mask .share-actuelle:hover {
+.card-container .meteo-actuelle .mask .share-btn:hover {
+  background-color: aliceblue;
+}
+.card-container .meteo-actuelle .mask .share-btn:hover .share-actuelle {
   color: black;
 }
 .card-container .meteo-actuelle .mask .cloud-sun {
@@ -135,6 +165,9 @@
 
 @media screen and (min-width: 550px) {
   .card-container .meteo-actuelle .mask .title {
+    left: 8vw;
+  }
+  .card-container .meteo-prevision .mask .title {
     left: 8vw;
   }
 }
