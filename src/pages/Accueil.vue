@@ -1,3 +1,14 @@
+<script lang="ts">
+import { defineComponent } from 'vue'
+import LiLineChart from "../components/Charts/LiLineChart.vue"
+
+export default defineComponent({
+  components: {
+    LiLineChart
+  }
+})
+</script>
+
 <template>
   <section>
     <div class="content">
@@ -7,7 +18,7 @@
             <img src="../assets/weatherCard/dayWeather.png" alt="dayTime" class="background">
             <font-awesome-icon :icon="['fas', 'cloud-sun']" class="icon cloud-sun"></font-awesome-icon>
             <p class="title">Météo</p>
-            <a href="github.com/lbAntoine" class="share-btn">
+            <a href="https://github.com/lbAntoine" target="_blank" class="share-btn">
               <font-awesome-icon :icon="['fas', 'share-alt']" class="icon share-actuelle"></font-awesome-icon>
             </a>
           </div>
@@ -22,7 +33,8 @@
       </div>
 
       <div class="meteo-graph">
-        <font-awesome-icon :icon="['fas', 'chart-line']" class="icon"></font-awesome-icon>
+        <LiLineChart/>
+        <!-- <font-awesome-icon :icon="['fas', 'chart-line']" class="icon"></font-awesome-icon> -->
       </div>
     </div>
   </section>
@@ -95,7 +107,7 @@
   font-size: 1.5em;
   font-weight: 500;
   color: aliceblue;
-  top: 1vh;
+  top: 1.2vh;
 }
 .card-container .meteo-prevision .mask .title,
 .card-container .meteo-prevision .mask .icon {
@@ -107,7 +119,7 @@
   font-size: 1.5em;
   font-weight: 500;
   color: aliceblue;
-  top: 1vh;
+  top: 1.2vh;
 }
 .card-container .meteo-prevision .mask {
   position: relative;
@@ -140,7 +152,7 @@
 .meteo-graph {
   width: 92vw;
   height: 35vh;
-  border: 2px solid red;
+  /* border: 2px solid red; */
   margin: 10px;
   border-radius: 20px;
 }
@@ -161,6 +173,9 @@
   left: 3vw;
   top: 2vh;
   color: aliceblue;
+}
+.chart-container {
+  height: 35vh;
 }
 
 @media screen and (min-width: 550px) {

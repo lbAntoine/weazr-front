@@ -29,13 +29,13 @@ export default defineComponent({
 }
 .gen .nav-bar {
   /* border: 2px solid red; */  
-  background: #174e63;
+  background: #353535;
   width: 100vw;
   height: 7vh;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  filter: drop-shadow(0 0 30px #0b252ec0);
+  filter: drop-shadow(0 0 30px #202020);
 }
 .gen .nav-bar .link {
   text-decoration: none;

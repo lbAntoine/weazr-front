@@ -10,13 +10,22 @@ import Logo from './components/Logo/Logo.vue'
 
   <Banner/>
 
-  <transition
+  <router-view v-slot="{ Component }">
+    <transition 
+    mode="out-in"
+    enter-active-class="animate__animated animate__fadeIn"
+    leave-active-class="animate__animated animate__fadeOut"
+    >
+      <component :is="Component" />
+    </transition>
+  </router-view>
+  <!-- <transition
   mode="out-in"
   enter-active-class="animate__animated animate__fadeIn"
   leave-active-class="animate__animated animate__fadeOut"
   >
     <router-view/>
-  </transition>
+  </transition> -->
 </template>
 
 <style>
@@ -29,17 +38,21 @@ import Logo from './components/Logo/Logo.vue'
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #154557;
+  background: #353535;
+}
+.gen {
+  z-index: 5;
 }
 .logo {
   position: absolute;
   margin: 1vh 0 0 3vw;
+  z-index: 5;
 }
 section {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 93vh;
-  background: #154557;
+  background: #353535;
 }
 </style>

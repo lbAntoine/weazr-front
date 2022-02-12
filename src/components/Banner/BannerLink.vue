@@ -31,9 +31,9 @@ export default ({
   border-radius: 10px;
 }
 .link:hover {
-  background-color: #0e313d;
+  background-color: #3bb36d;
 }
 .link.active {
-  background-color: #0e313d;
+  background-color: #3bb36d;
 }
 </style>
