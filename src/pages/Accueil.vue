@@ -15,7 +15,7 @@ export default defineComponent({
       <div class="card-container">
         <div class="meteo-card meteo-actuelle">
           <div class="mask">
-            <img src="../assets/weatherCard/dayWeather.png" alt="dayTime" class="background">
+            <!-- <img src="../assets/weatherCard/dayWeather.png" alt="dayTime" class="background"> -->
             <font-awesome-icon :icon="['fas', 'cloud-sun']" class="icon cloud-sun"></font-awesome-icon>
             <p class="title">Météo</p>
             <a href="https://github.com/lbAntoine" target="_blank" class="share-btn">
@@ -26,7 +26,7 @@ export default defineComponent({
 
         <div class="meteo-card meteo-prevision">
           <div class="mask">
-            <img src="../assets/weatherCard/rainyWeather.jpg" alt="rainyTime" class="icon background">
+            <!-- <img src="../assets/weatherCard/rainyWeather.jpg" alt="rainyTime" class="icon background"> -->
             <p class="title">Demain</p>
           </div>
         </div>
@@ -61,6 +61,10 @@ export default defineComponent({
   /* border: 2px solid red; */
   margin: 1vw;
   border-radius: 20px;
+}
+.mask {
+  background-color: #353535;
+  filter: drop-shadow(0 0 10px #20202075);
 }
 .card-container .meteo-actuelle .mask {
   position: relative;
