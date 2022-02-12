@@ -86,11 +86,11 @@ export default defineComponent({
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: #3bb36d;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px #3bb36d;
 }
 
 input:checked + .slider:before {

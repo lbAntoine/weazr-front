@@ -1,6 +1,9 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import LiLineChart from "../components/Charts/LiLineChart.vue"
+// import { allMinutes } from '../../services/cron/cronJob'
+import { getReleveDaily } from '../../services/models/releveModel'
+// const tacheMinute = new allMinutes()
 
 export default defineComponent({
   components: {
