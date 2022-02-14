@@ -1,13 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Accueil from '../pages/Accueil.vue'
-import Historique from '../pages/Historique.vue'
-import Profile from '../pages/Profile.vue'
 
 const routes = [
   {
     path: '/',
     name: 'Accueil',
-    component: Accueil,
+    component: () => import('../pages/Accueil.vue'),
     meta: {
       title: 'Accueil'
     }
@@ -15,7 +12,7 @@ const routes = [
   {
     path: '/historique',
     name: 'Historique',
-    component: Historique,
+    component: () => import('../pages/Historique.vue'),
     meta: {
       title: 'Historique'
     }
@@ -23,7 +20,7 @@ const routes = [
   {
     path: '/profile',
     name: 'Profile',
-    component: Profile,
+    component: () => import('../pages/Profile.vue'),
     meta: {
       title: 'Profile'
     }

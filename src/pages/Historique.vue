@@ -140,6 +140,5 @@ p.active {
   p {
     font-size: 2em;
   }
-  
 }
 </style>

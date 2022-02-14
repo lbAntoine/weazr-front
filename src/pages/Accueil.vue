@@ -1,13 +1,12 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import LiLineChart from "../components/Charts/LiLineChart.vue"
-// import { allMinutes } from '../../services/cron/cronJob'
-import { getReleveDaily } from '../../services/models/releveModel'
-// const tacheMinute = new allMinutes()
+import Temp from '../components/Chiffres/Temp.vue'
 
 export default defineComponent({
   components: {
-    LiLineChart
+    LiLineChart,
+    Temp
   }
 })
 </script>
@@ -21,6 +20,7 @@ export default defineComponent({
             <!-- <img src="../assets/weatherCard/dayWeather.png" alt="dayTime" class="background"> -->
             <font-awesome-icon :icon="['fas', 'cloud-sun']" class="icon cloud-sun"></font-awesome-icon>
             <p class="title">Météo</p>
+            <Temp />
             <a href="https://github.com/lbAntoine" target="_blank" class="share-btn">
               <font-awesome-icon :icon="['fas', 'share-alt']" class="icon share-actuelle"></font-awesome-icon>
             </a>
@@ -31,6 +31,8 @@ export default defineComponent({
           <div class="mask">
             <!-- <img src="../assets/weatherCard/rainyWeather.jpg" alt="rainyTime" class="icon background"> -->
             <p class="title">Demain</p>
+            <!-- <p v-if="result" :result="result">super</p>
+            <p v-else="">NUL</p> -->
           </div>
         </div>
       </div>

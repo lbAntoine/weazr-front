@@ -1,6 +1,10 @@
-export interface releve {
+export interface BasicReleve {
+  id: number
+}
+
+export interface Releve extends BasicReleve {
   id: number,
-  temp: number,
-  hum: number,
-  date: string
+  temp?: string,
+  hum?: string,
+  date?: string
 }
