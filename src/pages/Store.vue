@@ -1,56 +1,29 @@
-<script lang="ts">
-import { defineComponent } from 'vue'
+<!-- <script lang="ts">
+import { defineComponent, ref } from 'vue'
+import { MutationTypes, useStore } from '../store'
 import LiLineChart from "../components/Charts/LiLineChart.vue"
-import releveDataService from '../services/releveDataService'
+// import releveDataService from '../services/releveDataService'
+import { getLastReleve } from '../services/releveData.controler'
+import { Releve } from '../../types/releve'
 
 export default defineComponent({
-  // setup() {
-  //   const store = useStore()
-  //   const temp = ref(store.state.releve.temp)
-  //   const hum = ref(store.state.releve.hum)
-  //   const newReleve = () => {
-  //     store.commit('newReleve')
-  //   }
-
-  //   return {
-  //     temp,
-  //     hum,
-  //     newReleve
-  //   }
-  // },
+  setup() {
+    const store = useStore()
+    const temp = ref(store.state.releve.temp)
+    const hum = ref(store.state.releve.hum)
+    const result: Releve = getLastReleve()
+    const newReleve = () => {
+      store.commit(MutationTypes.NEW_RELEVE, result)
+    }
+    //TODO: Faire l'aménagement du front si le store fonctionne
+    return {
+      temp,
+      hum,
+      newReleve
+    }
+  },
   components: {
     LiLineChart
-  },
-  data () {
-    return {
-      releve: {
-        id: null,
-        temp: '',
-        hum: '',
-        date: ''
-      }
-    }
-  },
-  methods: {
-    getMyResults() {
-      console.log('Starting data collecting...')
-      setInterval(() => {
-        releveDataService.getLast()
-          .then(response => {
-            this.releve = response.data
-            console.log(this.releve)
-        })
-          .catch(e => {
-            console.log('Erreur dans la fonction getMyResults : ', e)
-        })
-      }, 10000)
-    }
-  },
-  // beforeDestroy() {
-  //   clearInterval(this.getMyResults)
-  // },
-  created () {
-    this.getMyResults()
   }
 })
 </script>
@@ -58,35 +31,28 @@ export default defineComponent({
 <template>
   <section>
     <div class="content">
+
+      <!-- Container des cartes météo -->
       <div class="card-container">
         <div class="meteo-card meteo-actuelle">
           <div class="mask">
-            <!-- <img src="../assets/weatherCard/dayWeather.png" alt="dayTime" class="background"> -->
             <font-awesome-icon :icon="['fas', 'cloud-sun']" class="icon cloud-sun"></font-awesome-icon>
             <p class="title">Météo</p>
             <div class="data">
-              <p class="temp">{{ (Math.round(parseFloat(releve[0].temp) * 10) / 10).toString() + '°C' }}</p>
-              <p class="hum">{{ (Math.round(parseFloat(releve[0].hum))).toString() + '% humidité' }}</p>
+              <p>{{ temp }}</p>
+              <!-- <p class="temp">{{ (Math.round(parseFloat(releve[0].temp) * 10) / 10).toString() + '°C' }}</p>
+              <p class="hum">{{ (Math.round(parseFloat(releve[0].hum))).toString() + '% humidité' }}</p> -->
             </div>
             <a href="https://github.com/lbAntoine" target="_blank" class="share-btn">
               <font-awesome-icon :icon="['fas', 'share-alt']" class="icon share-actuelle"></font-awesome-icon>
             </a>
           </div>
         </div>
-
-        <!-- <div class="meteo-card meteo-prevision">
-          <div class="mask"> -->
-            <!-- <img src="../assets/weatherCard/rainyWeather.jpg" alt="rainyTime" class="icon background"> -->
-            <!-- <p class="title">Demain</p> -->
-            <!-- <p v-if="result" :result="result">super</p>
-            <p v-else="">NUL</p> -->
-          <!-- </div>
-        </div> -->
       </div>
 
+      <!-- Container du graph -->
       <div class="meteo-graph">
-        <LiLineChart/>
-        <!-- <font-awesome-icon :icon="['fas', 'chart-line']" class="icon"></font-awesome-icon> -->
+        <!-- <LiLineChart/> -->
       </div>
     </div>
   </section>
@@ -259,4 +225,4 @@ p {
     left: 8vw;
   }
 }
-</style>
+</style> -->

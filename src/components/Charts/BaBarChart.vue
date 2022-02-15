@@ -7,10 +7,9 @@
 </template>
 
 <script setup lang="ts">
-import pattern from "patternomaly"
-import { ref, computed, defineComponent } from "vue"
+import { ref, computed } from "vue"
 import { BarChart } from "vue-chart-3"
-import { CHART_COLORS, transparentize } from '../../utils/utils'
+import { CHART_COLORS } from '../../utils/utils'
 import {
   Chart,
   BarController,
@@ -20,8 +19,8 @@ import {
 } from "chart.js"
 Chart.register(BarController, CategoryScale, LinearScale, BarElement)
 const dataValues = ref([
-  [1, 3, 5, 7, 2, 4, 6],
-  [1, 5, 2, 6, 3, 7, 4]
+  [12, 14, 10, 11, 11, 15, 16],
+  [68, 71, 72, 58, 53, 52, 60]
 ])
 const data = computed(() => ({
   labels: ["Lun", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim"],

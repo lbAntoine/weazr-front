@@ -1,8 +1,7 @@
 <script lang="ts">
-import { defineComponent } from 'vue'
 import BannerLink from './BannerLink.vue'
 
-export default defineComponent({
+export default ({
   components: {
     BannerLink
   }
@@ -14,7 +13,7 @@ export default defineComponent({
     <div class="nav-bar">
       <BannerLink to="/"><font-awesome-icon :icon="['fas', 'home']" /><p>Accueil</p></BannerLink>
       <BannerLink to="/historique"><font-awesome-icon :icon="['fas', 'chart-line']" /><p>Historique</p></BannerLink>
-      <BannerLink to="/profile"><font-awesome-icon :icon="['fas', 'user']" /><p>Profile</p></BannerLink>
+      <!-- <BannerLink to="/storeTest"><font-awesome-icon :icon="['fas', 'user']" /><p>Test VUEX Store</p></BannerLink> -->
     </div>
   </div>
 </template>

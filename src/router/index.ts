@@ -17,14 +17,22 @@ const routes = [
       title: 'Historique'
     }
   },
-  {
-    path: '/profile',
-    name: 'Profile',
-    component: () => import('../pages/Profile.vue'),
-    meta: {
-      title: 'Profile'
-    }
-  }
+  // {
+  //   path: '/storeTest',
+  //   name: 'Store',
+  //   component: () => import('../pages/Store.vue'),
+  //   meta: {
+  //     title: 'Store Test VUEX'
+  //   }
+  // },
+  // {
+  //   path: '/profile',
+  //   name: 'Profile',
+  //   component: () => import('../pages/Profile.vue'),
+  //   meta: {
+  //     title: 'Profile'
+  //   }
+  // }
 ]
 
 const router = createRouter({
